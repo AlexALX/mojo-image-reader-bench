@@ -8,7 +8,7 @@ A benchmarking and performance comparison repository, designed to measure and vi
 
 This repository contains the benchmarking harness, sample test images, and visualization scripts used to evaluate decoding speeds across various formats (**BMP**, **GIF**, **JPEG**, and **PNG**). It compiles a high-performance Mojo benchmark, logs execution medians, and automatically generates clear, grouped comparison charts.
 
-[![Performance Comparison Chart](results/benchmark_comparison_grouped.png)](results/benchmark_comparison_grouped.png)
+[![Performance Comparison Chart](results/benchmark_comparison.png)](results/benchmark_comparison.png)
 
 ---
 
