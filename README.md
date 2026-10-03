@@ -49,7 +49,7 @@ If you want to run specific steps manually:
 
 * **Compile the benchmark:** `pixi run build`
 * **Run benchmarks and update `log.txt`:** `pixi run bench`
-* **Generate the comparison chart (`benchmark_comparison_grouped.png`):** `pixi run plot`
+* **Generate the comparison chart (`benchmark_comparison.png`):** `pixi run plot`
 
 ---
 
