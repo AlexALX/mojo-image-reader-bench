@@ -28,11 +28,14 @@ This repository contains the benchmarking harness, sample test images, and visua
 
 This project uses **Pixi** for fully reproducible environment management, locking the **Mojo 1.0** toolchain and required Python packages (`pandas`, `matplotlib`).
 
-1. Install [Pixi](https://pixi.sh/):
+1. Clone the repository with submodules:
+   `git clone --recursive https://github.com/AlexALX/mojo-image-reader-bench.git`
+   *(Or, if you already cloned it without `--recursive`: `git submodule update --init --recursive`)*
+2. Install [Pixi](https://pixi.sh/):
    `curl -fsSL https://pixi.sh/install.sh | bash`
-2. Install dependencies:
+3. Install dependencies:
    `pixi install`
-
+   
 ---
 
 ## Usage
