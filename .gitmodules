@@ -1,0 +1,3 @@
+[submodule "image_reader"]
+	path = imagelib
+	url = https://github.com/AlexALX/mojo-image-reader
