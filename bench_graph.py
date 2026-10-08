@@ -4,6 +4,12 @@ from matplotlib.patches import Patch
 import numpy as np
 import pandas as pd
 
+# Color Configuration
+COLOR_MOJO = '#e06d53'
+COLOR_PILLOW = '#2b5c8f'
+PILLOW_ALPHA = 0.85
+COLOR_GRID = '--'
+
 # Parse the log file including errors
 data = []
 current_file = None
@@ -89,7 +95,7 @@ for i, fmt in enumerate(formats):
     # --- Mojo Bar & Logic ---
     if not pd.isna(row['Mojo']):
       w = row['Mojo']
-      ax.barh(y - bar_height / 2, w, bar_height, color='#2b5c8f')
+      ax.barh(y - bar_height / 2, w, bar_height, color=COLOR_MOJO)
       ax.text(
           w * 1.12,
           y - bar_height / 2,
@@ -97,7 +103,7 @@ for i, fmt in enumerate(formats):
           va='center',
           ha='left',
           fontsize=9,
-          color='#2b5c8f',
+          color=COLOR_MOJO,
           weight='bold',
       )
     elif row['MojoError'] is not None:
@@ -109,14 +115,14 @@ for i, fmt in enumerate(formats):
           va='center',
           ha='left',
           fontsize=9,
-          color='#2b5c8f',
+          color=COLOR_MOJO,
           style='italic',
       )
 
     # --- Pillow Bar & Logic ---
     if not pd.isna(row['Pillow']):
       w = row['Pillow']
-      ax.barh(y + bar_height / 2, w, bar_height, color='#e06d53', alpha=0.85)
+      ax.barh(y + bar_height / 2, w, bar_height, color=COLOR_PILLOW, alpha=PILLOW_ALPHA)
       ax.text(
           w * 1.12,
           y + bar_height / 2,
@@ -124,7 +130,7 @@ for i, fmt in enumerate(formats):
           va='center',
           ha='left',
           fontsize=9,
-          color='#e06d53',
+          color=COLOR_PILLOW,
           weight='bold',
       )
     elif row['PillowError'] is not None:
@@ -136,7 +142,7 @@ for i, fmt in enumerate(formats):
           va='center',
           ha='left',
           fontsize=9,
-          color='#e06d53',
+          color=COLOR_PILLOW,
           style='italic',
       )
 
@@ -151,13 +157,13 @@ for i, fmt in enumerate(formats):
     current_xmin = ax.get_xlim()[0]
     ax.set_xlim(left=current_xmin, right=max_val * 1.45)
 
-  ax.xaxis.grid(True, which='both', linestyle='--', alpha=0.5)
+  ax.xaxis.grid(True, which='both', linestyle=COLOR_GRID, alpha=0.5)
   ax.set_axisbelow(True)
 
   # Custom legend
   legend_elements = [
-      Patch(facecolor='#2b5c8f', label='Mojo'),
-      Patch(facecolor='#e06d53', alpha=0.85, label='Pillow'),
+      Patch(facecolor=COLOR_MOJO, label='Mojo'),
+      Patch(facecolor=COLOR_PILLOW, alpha=PILLOW_ALPHA, label='Pillow'),
   ]
   ax.legend(handles=legend_elements, fontsize=10, loc='lower right')
 
@@ -173,6 +179,5 @@ plt.tight_layout()
 # Save plot to file without automatically opening it
 plt.savefig('benchmark_comparison.png', dpi=150)
 print(
-    'Benchmark plot successfully saved to benchmark_comparison_grouped.png'
-    ' (not opened automatically).'
+    'Benchmark plot successfully saved to benchmark_comparison.png'
 )
