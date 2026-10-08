@@ -17,3 +17,6 @@ build = "mkdir -p build && mojo build -I ./imagelib/ -O3 ./benchmark/imagelib_be
 bench = "./run_bench.sh > log.txt"
 plot = "python bench_graph.py"
 all = { depends-on = ["build", "bench", "plot"] }
+build_cli = "mkdir -p build && mojo build -I ./imagelib/ -O3 ./imagelib/image_reader/main.mojo -o ./build/imagelib_reader"
+export = "./run_export.sh"
+export_all = { depends-on = ["build_cli", "export"] }

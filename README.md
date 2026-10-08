@@ -55,7 +55,7 @@ If you want to run specific steps manually:
 
 ## Output Chart
 
-The generated `benchmark_comparison_grouped.png` features:
+The generated `benchmark_comparison.png` features:
 * **Grouped subplots** by image format (BMP, GIF, JPG, PNG).
 * **Logarithmic scale** to accommodate a wide range of execution times.
 * **Error handling:** Formats or features not supported by either library are cleanly labeled as `Not Supported` with empty timelines.
@@ -65,6 +65,9 @@ The generated `benchmark_comparison_grouped.png` features:
 * All sample images used in this benchmark suite are my personal photographs from my archive.
 * PNG images generated using my script in Blender (the source script is included).
 * Also included are the .xcf (GIMP) source files for GIFs and a custom patcher script for disposal method 3.
+
+## Samples export
+* **Export all samples:** `pixi run export_all` - compiles the image reader and exports all sample images to PPM files in the `export/` folder. This is useful for testing the decoder and verifying the output by comparing the exported images with the original samples.
 
 ---
 
