@@ -177,7 +177,7 @@ plt.suptitle(
 plt.tight_layout()
 
 # Save plot to file without automatically opening it
-plt.savefig('benchmark_comparison.png', dpi=150)
+plt.savefig('benchmark_comparison.png', dpi=95)
 print(
     'Benchmark plot successfully saved to benchmark_comparison.png'
 )
